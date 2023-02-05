@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    background-color: #ffd845;
+    overflow-x: hidden
+}
+
+.poke-container {
+    margin: 100%;
+    max-width: 1358px;
+    margin: 0 auto;
+    padding: 0 20px
+}
+
+.saved-pokemons-wrapper {
+    -webkit-transition: -webkit-transform .6s ease;
+    transition: -webkit-transform .6s ease;
+    -o-transition: transform .6s ease;
+    transition: transform .6s ease;
+    transition: transform .6s ease, -webkit-transform .6s ease
+}
+
+.poke-save-btn:hover {
+    color: red;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease
+}
+
+.modal-overlay {
+    overflow: scroll;
+    overflow-x: hidden
+}
+
+.saved-pokemons-list li {
+    margin-bottom: 50px
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 20;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/right-arrow.svg) !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    content: ""
+}
+
+.poke-remove-btn {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/trash.svg) !important;
+    background-repeat: no-repeat;
+    background-size: contain
+}

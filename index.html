@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/styles.min.css">
+    <title>Pokemons</title>
+</head>
+
+<body>
+    <!--header-->
+    <header class="site-header pt-[50px] pb-[70px]">
+        <div class="poke-container">
+            <div class="site-header-wrapper relative">
+                <a class="site-img-wrapper block max-w-[610px] mr-auto ml-auto" href="index.html">
+                    <img src="./images/site-logo.svg" alt="Site logo" width="610" height="225">
+                </a>
+
+                <div class="absolute top-[-50px] right-0 md:top-[0]">
+                    <button class="poke-saved-btn relative text-7xl text-red-600" type="button">
+                        <img src="./images/heart.svg" alt="">
+                    </button>
+                    <span
+                        class="saved-pokemons-count absolute bottom-[-10px] right-[-10px] inline-block p-1 px-3 text-white bg-red-600 border-solid border-2 border-white rounded-[50%]">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-->
+
+    <!-- Site main start -->
+    <main class="site-main pb-[100px]">
+        <section class="search-section mb-[100px]">
+            <div class="poke-container">
+                <div class="search-section-wrapper">
+                    <form class="poke-search-form mx-auto max-w-[1125px]" action="#" method="get">
+                        <div class="poke-form-infos flex  flex-col items-center lg:flex-row md:justify-around">
+                            <select
+                                class="poke-type-select mb-[14px] py-4 px-20 w-[300px] text-center border-2 border-solid border-black rounded-r-2xl rounded-tl-2xl rounded-bl-2xl lg:w-auto lg:mb-[0] lg:text-left"
+                                name="types">
+                                <option value="gross">Gross</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <input
+                                class="search-poke-input mb-[14px] py-4 px-7 w-[300px] border-2 border-solid border-black rounded-r-2xl rounded-tl-2xl rounded-bl-2xl lg:mb-[0]"
+                                type="text" name="search" placeholder="Search">
+                            <select
+                                class="sort-poke-select mb-[14px] py-4 px-20 w-[300px] text-center border-2 border-solid border-black rounded-r-2xl rounded-tl-2xl rounded-bl-2xl lg:w-auto lg:mb-[0] lg:text-left"
+                                name="sort">
+                                <option value="a-z">A-z</option>
+                                <option value="z-a">Z-a</option>
+                            </select>
+                            <button
+                                class="submit-btn py-[14px] px-16 text-lg bg-white border-2 border-solid border-black rounded-r-2xl rounded-tl-2xl rounded-bl-2xl"
+                                type="submit"><b>Search</b></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="poke-results-section">
+            <div class="poke-container">
+                <div class="poke-results-wrapper">
+                    <ul class="poke-results-list grid gap-14 list-none md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--main-->
+
+    <div class="saved-pokemons-wrapper backdrop-blur-[7px] fixed top-0 right-0 z-[1] w-full h-screen"
+        style="transform: translateX(100%);">
+        <div class="modal-overlay absolute top-0 right-0 z-10 max-w-[536px] w-full h-screen pt-[80px] bg-amber-200">
+            <button class="close-modal-btn" type="button"></button>
+            <ul class="saved-pokemons-list">
+            </ul>
+        </div>
+    </div>
+
+    <template class="poke-template">
+        <li class="poke-item mx-auto bg-white border-2 border-solid border-black rounded-r-2xl rounded-tl-2xl rounded-bl-2xl overflow-hidden"
+            style="width: 18rem;">
+            <img class="poke-img w-full" src="" alt="" width="288" height="150">
+            <div class="poke-item-texts relative pt-5 px-[30px] pb-9">
+                <h3 class="poke-name mb-1 font-bold leading-7 text-2xl"></h3>
+                <p class="poke-type mb-6 font-medium leading-6 text-xl"></p>
+                <div>
+                    <b class="poke-weight mr-7 leading-7 text-2xl"></b>
+                    <b class="poke-age leading-7 text-2xl"></b>
+                </div>
+                
+                <button class="poke-save-btn text-red-100 absolute top-3 right-[30px] text-4xl" type="button">
+                    &#9829;
+                </button>
+            </div>
+        </li>
+    </template>
+
+    <template class="saved-poke-template">
+        <li class="poke-item mx-auto bg-white border-2 border-solid border-black rounded-r-2xl rounded-tl-2xl rounded-bl-2xl overflow-hidden"
+            style="width: 18rem;">
+            <img class="poke-img w-full" src="" alt="" width="288" height="150">
+            <div class="poke-item-texts relative pt-5 px-[30px] pb-9">
+                <h3 class="poke-name mb-1 font-bold leading-7 text-2xl"></h3>
+                <p class="poke-type mb-6 font-medium leading-6 text-xl"></p>
+                <div>
+                    <b class="poke-weight mr-7 leading-7 text-2xl"></b>
+                    <b class="poke-age leading-7 text-2xl"></b>
+                </div>
+                <button class="poke-remove-btn absolute top-3 right-[30px] text-4xl" type="button">
+                </button>
+            </div>
+        </li>
+    </template>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
